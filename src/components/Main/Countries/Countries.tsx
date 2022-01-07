@@ -98,10 +98,10 @@ const Countries = (props: Props) => {
   };
 
   return (
-    <section id="countries" className={classes.countries}>
+    <div id="countries" className={classes.countries}>
       {isLoadingData && <LoadingSpinner />}
       {renderCountries()}
-    </section>
+    </div>
   );
 };
 

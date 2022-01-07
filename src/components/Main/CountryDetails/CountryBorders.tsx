@@ -50,7 +50,7 @@ const CountryBorders = ({ borderCountryCodes }: Props) => {
           onClick={() => navigate(`/${countryCode}`)}
           key={countryCode}
         >
-          <p>{countryName}</p>
+          {countryName}
         </CountryBtn>
       );
     });

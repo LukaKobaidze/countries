@@ -13,14 +13,14 @@ const Controls = (props: Props) => {
   const { searchValueHandler, searchedValue, searchedResult } = props;
 
   return (
-    <section id="controls" className={classes.controls}>
+    <div id="controls" className={classes.controls}>
       <Search
         searchValueHandler={searchValueHandler}
         searchedValue={searchedValue}
         searchedResult={searchedResult}
       />
       <Filter />
-    </section>
+    </div>
   );
 };
 

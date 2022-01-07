@@ -52,12 +52,7 @@ const Filter = () => {
         />
       )}
       <div className={classes.filter}>
-        <button
-          className={`element ${classes['filter--btn']}`}
-          onClick={dropdownHandler}
-          ref={elementRef}
-        >
-          <p>Filter by Region</p>
+        <div className={classes['filter--btn-div']}>
           <div className={classes['filter-icon-div']}>
             <CheveronDown
               className={`${classes['filter-icon-div--icon']} ${
@@ -65,7 +60,14 @@ const Filter = () => {
               }`}
             />
           </div>
-        </button>
+          <button
+            className={`element ${classes['filter--btn']}`}
+            onClick={dropdownHandler}
+            ref={elementRef}
+          >
+            Filter by Region
+          </button>
+        </div>
         <Wrapper
           className={`${classes['filter__dropdown']} ${
             dropdown ? classes['filter__dropdown--active'] : ''

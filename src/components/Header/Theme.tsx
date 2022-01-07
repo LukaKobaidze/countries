@@ -12,7 +12,7 @@ const Theme = ({ onToggleTheme, theme }: Props) => {
     <button className={classes.theme} onClick={onToggleTheme}>
       {theme === 'light' && <Moon />}
       {theme === 'dark' && <MoonFill />}
-      <p>Dark Mode</p>
+      Dark Mode
     </button>
   );
 };

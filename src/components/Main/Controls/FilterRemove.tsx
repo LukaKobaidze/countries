@@ -11,8 +11,8 @@ const FilterRemove = ({ filter, removeFilterHandler }: Props) => {
       className={`element ${classes['filter-remove']}`}
       onClick={removeFilterHandler}
     >
-      <p>{filter}</p>
-      <div>x</div>
+      {filter}
+      <span className={classes['filter-remove--cross']}>x</span>
     </button>
   );
 };

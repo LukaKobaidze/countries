@@ -100,9 +100,9 @@ const Main = () => {
                 updateNumberOfPages={updateNumberOfPages}
               />
               {numberOfPages > 1 && (
-                <section id="pagination">
+                <div id="pagination">
                   <Pagination numberOfPages={numberOfPages} />
-                </section>
+                </div>
               )}
             </>
           }
