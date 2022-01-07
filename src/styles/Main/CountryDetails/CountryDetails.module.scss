@@ -30,6 +30,11 @@
       @media (max-width: 1150px) {
         flex-basis: 48%;
       }
+      @media (max-width: 950px) {
+        flex-basis: initial;
+        height: 100%;
+        width: 100%;
+      }
     }
     &__text {
       flex-basis: 43%;
