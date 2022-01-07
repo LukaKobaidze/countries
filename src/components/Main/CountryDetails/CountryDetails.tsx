@@ -48,6 +48,10 @@ const CountryDetails = ({ prevPath }: Props) => {
       });
   }, [countryCode]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [prevPath]);
+
   const btnBackHandler = () => {
     if (!prevPath) {
       navigate('/');
@@ -55,6 +59,7 @@ const CountryDetails = ({ prevPath }: Props) => {
       navigate(-1);
     }
   };
+
   return (
     <>
       {isLoading && <LoadingSpinner />}
