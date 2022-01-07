@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { countriesDataType } from '../../../data/country-data-types';
 import LoadingSpinner from '../../UI/LoadingSpinner';
@@ -32,11 +32,13 @@ const Countries = (props: Props) => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  const filteredCountriesData = currentRegion
-    ? countriesData.filter(country =>
-        country.region.toLowerCase().includes(currentRegion)
-      )
-    : countriesData;
+  const filteredCountriesData = useMemo(() => {
+    return currentRegion
+      ? countriesData.filter(country =>
+          country.region.toLowerCase().includes(currentRegion)
+        )
+      : countriesData;
+  }, [countriesData, currentRegion]);
 
   const searchEnteredData = currentEnteredSearch
     ? filteredCountriesData.filter(country =>
@@ -51,19 +53,23 @@ const Countries = (props: Props) => {
       searchedResultHandler([]);
       return;
     }
-
     const result = filteredCountriesData.filter(country =>
       country.name.toLowerCase().includes(searchedValue.trim().toLowerCase())
     );
     searchedResultHandler(result);
-  }, [searchedValue, currentRegion]);
+  }, [
+    searchedValue,
+    currentRegion,
+    searchedResultHandler,
+    filteredCountriesData,
+  ]);
 
   useEffect(() => {
     const dataCountries = searchEnteredData || filteredCountriesData;
     updateNumberOfPages(
       Math.floor(dataCountries.length / COUNTRIES_PER_PAGE) + 1
     );
-  }, [filteredCountriesData, searchEnteredData]);
+  }, [filteredCountriesData, searchEnteredData, updateNumberOfPages]);
 
   const renderCountries = () => {
     const dataCountries = searchEnteredData || filteredCountriesData;

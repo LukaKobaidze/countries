@@ -66,7 +66,7 @@ const Main = () => {
           console.error(error);
         });
     }
-  }, [path.currentPath]);
+  }, [path.currentPath, countriesData]);
 
   const updateNumberOfPages = (number: number) => {
     setNumberOfPages(number);
@@ -76,12 +76,9 @@ const Main = () => {
     setSearchedValue(enteredValue);
   };
 
-  const searchedResultHandler = useCallback(
-    (result: countriesDataType[]) => {
-      setSearchedResult(result);
-    },
-    [searchedResult]
-  );
+  const searchedResultHandler = useCallback((result: countriesDataType[]) => {
+    setSearchedResult(result);
+  }, []);
 
   return (
     <main className={classes.main}>
