@@ -44,13 +44,13 @@ const Search = (props: Props) => {
     }, 500);
 
     return () => clearTimeout(timeout);
-  }, [enteredValue]);
+  }, [enteredValue, searchValueHandler]);
 
   useEffect(() => {
     if (!clickedOutside) return;
     setShowResult(false);
     setClickedOutside(false);
-  }, [clickedOutside]);
+  }, [clickedOutside, setClickedOutside]);
 
   const inputFocusHandler = () => {
     setShowResult(true);

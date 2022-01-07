@@ -5,7 +5,7 @@ type Props = {
 };
 
 const CountryFlag = ({ image }: Props) => {
-  return <img className={classes.flag} src={image} />;
+  return <img className={classes.flag} alt="" src={image} />;
 };
 
 export default CountryFlag;

@@ -24,7 +24,7 @@ const Filter = () => {
       setDropdown(false);
       setClickedOutside(false);
     }
-  }, [clickedOutside]);
+  }, [clickedOutside, setClickedOutside]);
 
   const dropdownHandler = () => {
     setDropdown(currState => !currState);

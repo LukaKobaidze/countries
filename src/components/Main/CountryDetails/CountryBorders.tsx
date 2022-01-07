@@ -24,7 +24,9 @@ const CountryBorders = ({ borderCountryCodes }: Props) => {
       ','
     )}
     `)
-      .then(response => response.json())
+      .then(response => {
+        return response.json();
+      })
       .then(data => {
         const transformedData = data.map((item: any) => {
           return {

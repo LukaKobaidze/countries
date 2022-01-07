@@ -16,7 +16,7 @@ const SearchResult = ({ searchedResult, onClick }: Props) => {
           className={classes['search-result__list--link']}
           to={item.countryCode}
         >
-          <img src={item.image} />
+          <img src={item.image} alt="" />
           <p className={classes['search-result--text-country']}>{item.name}</p>
           <p className={classes['search-result--text-region']}>{item.region}</p>
         </Link>

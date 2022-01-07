@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { countryDetailsDataType } from '../../../data/country-data-types';
-import { borderCountriesType } from './CountryBorders';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import ArrowLeft from '../../UI/Icons/ArrowLeft';
 import CountryFlag from './CountryFlag';

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { countriesDataType } from '../../data/country-data-types';
 import Pagination from '../UI/Pagination/Pagination';
@@ -76,9 +76,12 @@ const Main = () => {
     setSearchedValue(enteredValue);
   };
 
-  const searchedResultHandler = (result: countriesDataType[]) => {
-    setSearchedResult(result);
-  };
+  const searchedResultHandler = useCallback(
+    (result: countriesDataType[]) => {
+      setSearchedResult(result);
+    },
+    [searchedResult]
+  );
 
   return (
     <main className={classes.main}>
