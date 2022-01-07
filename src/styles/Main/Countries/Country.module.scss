@@ -13,9 +13,6 @@
     overflow: hidden;
     height: 50%;
     & img {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
       margin: 0 auto;
       display: block;
       object-fit: cover;
