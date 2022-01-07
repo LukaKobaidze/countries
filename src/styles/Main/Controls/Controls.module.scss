@@ -1,0 +1,15 @@
+.controls {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+
+  @media (max-width: 925px) {
+    height: 58px;
+  }
+
+  @media (max-width: 700px) {
+    height: auto;
+    flex-direction: column;
+  }
+}

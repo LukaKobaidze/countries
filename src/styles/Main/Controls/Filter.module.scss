@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  @media (max-width: 700px) {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    height: 55px;
+    margin-top: 50px;
+  }
+}
+
+.filter {
+  position: relative;
+  &--btn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: currentColor;
+    padding: 0 25px;
+    border: none;
+    background-color: var(--cls-element);
+    cursor: pointer;
+
+    @media (max-width: 825px) {
+      width: 185px;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 700px) {
+      width: 225px;
+    }
+
+    @media (max-width: 450px) {
+      padding: 0 15px;
+      width: 175px;
+    }
+  }
+  &__dropdown {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    transform: translateY(103%) scaleY(0);
+    transform-origin: top;
+    width: 100%;
+    cursor: auto;
+    transition: transform 0.25s;
+    &--active {
+      transform: translateY(103%) scaleY(1);
+    }
+    &--element {
+      padding: 10px 0 10px 20px;
+      text-align: start;
+      text-transform: capitalize;
+      background: none;
+      border: none;
+      cursor: pointer;
+      list-style: none;
+      color: currentColor;
+      font-size: inherit;
+      font-weight: inherit;
+
+      &:hover:not(.element--active) {
+        background-color: var(--cls-element-hover);
+      }
+      &.element--active {
+        background-color: var(--cls-element-hover);
+      }
+    }
+  }
+
+  & p {
+    letter-spacing: 1px;
+    user-select: none;
+
+    @media (max-width: 825px) {
+      font-size: 12px;
+    }
+  }
+
+  &-icon-div {
+    margin-left: 40px;
+
+    @media (max-width: 825px) {
+      margin-left: 20px;
+    }
+
+    &--icon {
+      transform: rotate(180deg);
+      transition: transform 0.25s;
+      &--active {
+        transform: rotate(0);
+      }
+      & path {
+        fill: currentColor;
+      }
+    }
+  }
+}

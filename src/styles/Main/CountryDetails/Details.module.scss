@@ -1,0 +1,39 @@
+.details {
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  &--div-1 {
+    margin-right: 20px;
+
+    @media (max-width: 600px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text-div {
+    display: flex;
+    margin: 10px 0;
+    & > span {
+      white-space: nowrap;
+    }
+
+    & > p {
+      margin-left: 5px;
+    }
+  }
+  & > div {
+    flex-basis: 100%;
+  }
+
+  &--p {
+    &:first-child {
+      margin-right: 10px;
+    }
+    margin: 15px 0;
+  }
+}

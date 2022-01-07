@@ -1,0 +1,11 @@
+.countries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 70px;
+  margin: 55px auto 0 auto;
+
+  @media (max-width: 566px) {
+    row-gap: 40px;
+  }
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --font-family-primary: 'Nunito Sans', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 800;
+  --font-size-items: 14px;
+  --font-size-detail: 16px;
+
+  --padding-layout: 75px;
+
+  @media (max-width: 1000px) {
+    --padding-layout: 60px;
+  }
+  @media (max-width: 875px) {
+    --padding-layout: 50px;
+  }
+  @media (max-width: 775px) {
+    --padding-layout: 40px;
+  }
+
+  @media (max-width: 475px) {
+    --padding-layout: 15px;
+  }
+  @media (max-width: 350px) {
+    --padding-layout: 10px;
+  }
+}
+
+body.theme--light {
+  --cls-background: hsl(0, 0%, 98%);
+  --cls-element: hsl(0, 0%, 100%);
+  --cls-element-hover: hsl(0, 0%, 85%);
+  --cls-text: hsl(200, 15%, 8%);
+  --cls-border: hsl(0, 0%, 85%);
+}
+
+body.theme--dark {
+  --cls-background: hsl(207, 26%, 17%);
+  --cls-element: hsl(209, 23%, 22%);
+  --cls-element-hover: hsl(209, 23%, 32%);
+  --cls-text: hsl(0, 0%, 100%);
+  --cls-border: hsl(209, 23%, 37%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-items);
+  font-weight: var(--font-weight-light);
+  background-color: var(--cls-background);
+  color: var(--cls-text);
+}
+
+.text--semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.element {
+  border-radius: 6px;
+  background-color: var(--cls-element);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.075);
+}

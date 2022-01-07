@@ -1,0 +1,30 @@
+.country-borders {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  margin-top: 55px;
+
+  @media (max-width: 950px) {
+    margin-top: 30px;
+  }
+  &-text {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  &-btn-div {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 30px;
+      padding: 7px 30px;
+      margin: 5px;
+      white-space: nowrap;
+    }
+  }
+}
