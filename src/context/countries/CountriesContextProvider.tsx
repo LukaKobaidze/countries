@@ -81,7 +81,6 @@ const CountriesContextProvider = ({ children }: Props) => {
     if (searchParamFilter) {
       setFilter(searchParamFilter);
       const filtered = getCountriesByRegion(data, searchParamFilter);
-      console.log(filtered);
       setCountries(filtered);
       setFilteredCountries(filtered);
     } else {

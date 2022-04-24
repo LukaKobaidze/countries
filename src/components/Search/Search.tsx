@@ -22,6 +22,10 @@ const Search = () => {
   const suggestionsShown = Math.min(searchSuggestions.length, SUGGESTIONS_MAX);
 
   useEffect(() => {
+    setInputValue(search);
+  }, [search]);
+
+  useEffect(() => {
     setFocusIndex(undefined);
   }, [suggestionsShown, showSuggestions]);
 
@@ -32,9 +36,6 @@ const Search = () => {
   }, [clickedOutside, setClickedOutside]);
 
   useEffect(() => {
-    console.log(focusIndex);
-    console.log(document.activeElement);
-
     if (
       focusIndex === undefined &&
       document.activeElement !== inputRef.current
