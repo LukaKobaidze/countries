@@ -1,0 +1,55 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 240px;
+  width: 100%;
+  max-width: 285px;
+  height: 330px;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 50%;
+  & img {
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+.text-div {
+  height: 50%;
+  margin: 20px 15px 5px 25px;
+  & > a {
+    text-decoration: none;
+    color: var(--cls-text);
+    &:hover {
+      text-decoration: underline;
+    }
+    & > h2 {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+  }
+  & > ul {
+    margin-bottom: 20px;
+    & > li {
+      list-style: none;
+      margin: 5px 0;
+
+      & > p {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.span {
+  font-weight: var(--font-weight-semibold);
+}

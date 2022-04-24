@@ -1,23 +1,37 @@
 $translate: translate(-50%, -50%);
+$animation-properties: 0.75s linear infinite;
 
-.loading-spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: $translate;
+.spinner {
   width: 60px;
   height: 60px;
   border: 7px solid var(--cls-element);
   border-top-color: var(--cls-element-hover);
   border-radius: 50%;
-  animation: loadingSpinner 0.75s linear infinite;
+  animation: loadingSpinner $animation-properties;
 }
 
 @keyframes loadingSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingSpinnerCenter {
   0% {
     transform: $translate rotate(0deg);
   }
   100% {
     transform: $translate rotate(360deg);
   }
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: $translate;
+  animation: loadingSpinnerCenter $animation-properties;
 }

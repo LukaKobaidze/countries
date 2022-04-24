@@ -1,37 +1,28 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import { Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from 'context/theme';
+import { PageCountry, PageRoot } from 'pages';
+import { CountriesContextProvider } from 'context/countries';
+import Header from 'components/Header';
+import styles from 'styles/App.module.scss';
 
-const changeTheme = (theme: 'light' | 'dark') => {
-  const prevTheme = theme === 'light' ? 'dark' : 'light';
-  document.body.classList.remove(`theme--${prevTheme}`);
-  document.body.classList.add(`theme--${theme}`);
-};
-
-function App() {
-  const initialTheme = () =>
-    JSON.parse(window.localStorage.getItem('theme')!) || 'light';
-  const [theme, setTheme] = useState<'light' | 'dark'>(initialTheme());
-
-  useEffect(() => {
-    window.localStorage.setItem('theme', JSON.stringify(theme));
-  }, [theme]);
-
-  const toggleThemeHandler = () => {
-    setTheme(curTheme => (curTheme === 'dark' ? 'light' : 'dark'));
-  };
-
-  useEffect(() => {
-    changeTheme(theme);
-  }, [theme]);
+const App = () => {
+  const root = (
+    <CountriesContextProvider>
+      <PageRoot />
+    </CountriesContextProvider>
+  );
 
   return (
-    <BrowserRouter>
-      <Header theme={theme} onToggleTheme={toggleThemeHandler} />
-      <Main />
-    </BrowserRouter>
+    <ThemeProvider>
+      <Header />
+      <main className={styles.main}>
+        <Routes>
+          <Route path="/" element={root} />
+          <Route path="/:countryCode" element={<PageCountry />} />
+        </Routes>
+      </main>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

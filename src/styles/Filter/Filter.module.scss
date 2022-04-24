@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  @media (max-width: 700px) {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    min-height: 55px;
+    margin-top: 50px;
+  }
+}
+
+

@@ -1,20 +1,16 @@
-import { Link } from 'react-router-dom';
-import Heading from '../UI/Heading';
-import Theme from './Theme';
-import classes from '../../styles/Header/Header.module.scss';
+import HeaderLogo from './HeaderLogo';
+import { useContext } from 'react';
+import { ThemeContext } from 'context/theme';
+import HeaderTheme from './HeaderTheme';
+import styles from 'styles/Header/Header.module.scss';
 
-type Props = {
-  theme: 'light' | 'dark';
-  onToggleTheme: () => void;
-};
+const Header = () => {
+  const { theme, onThemeToggle } = useContext(ThemeContext);
 
-const Header = (props: Props) => {
   return (
-    <header className={classes.header}>
-      <Link to="/" className={classes['header--heading-a']}>
-        <Heading className={classes['header--h1']}>Where in the world?</Heading>
-      </Link>
-      <Theme theme={props.theme} onToggleTheme={props.onToggleTheme} />
+    <header className={styles.header}>
+      <HeaderLogo />
+      <HeaderTheme theme={theme} onToggleTheme={onThemeToggle} />
     </header>
   );
 };

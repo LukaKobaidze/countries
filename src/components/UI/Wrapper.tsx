@@ -1,22 +1,17 @@
-import classes from '../../styles/UI/Wrapper.module.scss';
+import { forwardRef } from 'react';
+import styles from 'styles/UI/Wrapper.module.scss';
 
-type Props = {
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  elementRef?: React.RefObject<HTMLDivElement>;
-};
+interface Props extends React.ComponentPropsWithoutRef<'div'> {}
+type Ref = HTMLDivElement;
 
-const Wrapper = ({ children, className, onClick, elementRef }: Props) => {
-  return (
-    <div
-      className={`${classes.wrapper} ${className}`}
-      onClick={onClick}
-      ref={elementRef}
-    >
-      {children}
-    </div>
-  );
-};
+const Wrapper = forwardRef<Ref, Props>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <div className={`${styles.wrapper} ${className}`} {...props} ref={ref}>
+        {children}
+      </div>
+    );
+  }
+);
 
 export default Wrapper;
