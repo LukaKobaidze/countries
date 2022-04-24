@@ -16,11 +16,11 @@ const useStorageState = <T>(
     if (storageItem) {
       setState(JSON.parse(storageItem) as T);
     }
-  }, []);
+  }, [itemName]);
 
   useEffect(() => {
     localStorage.setItem(itemName, JSON.stringify(state));
-  }, [state]);
+  }, [itemName, state]);
 
   return [state, setState];
 };

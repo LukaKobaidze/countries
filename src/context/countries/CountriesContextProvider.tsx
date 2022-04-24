@@ -89,7 +89,7 @@ const CountriesContextProvider = ({ children }: Props) => {
       setCountries(data);
       setFilteredCountries(data);
     }
-  }, [searchParamFilter, isDataLoading]);
+  }, [data, searchParamFilter, isDataLoading]);
 
   useEffect(() => {
     if (isDataLoading) return;
@@ -103,7 +103,7 @@ const CountriesContextProvider = ({ children }: Props) => {
         setCountries(data);
       }
     }
-  }, [searchParamSearch, isDataLoading, data, filteredCountries]);
+  }, [searchParamSearch, isDataLoading, data, filteredCountries, filter]);
 
   return (
     <CountriesContext.Provider
