@@ -6,4 +6,5 @@
   padding: 0 var(--padding-layout);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.05);
   background-color: var(--cls-element);
+  transition: background-color 300ms;
 }

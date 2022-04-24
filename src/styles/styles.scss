@@ -62,6 +62,7 @@ body {
   font-weight: var(--font-weight-light);
   background-color: var(--cls-background);
   color: var(--cls-text);
+  transition: background-color 300ms, color 300ms;
 }
 
 .element {
